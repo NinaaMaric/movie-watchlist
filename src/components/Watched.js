@@ -4,6 +4,7 @@ import { MovieCard } from './MovieCard'
 
 export const Watched = () => {
     const {watched} = useContext(GlobalContext)
+    console.log(watched, "WATCHED")
     return (
         <div className="movie-page">
         <div className="container">
@@ -13,7 +14,7 @@ export const Watched = () => {
             {watched.lenght} {watched.lenght === 1 ? "Movie" : "Movies"}
           </span>
           </div>
-          {watched.lenght > 0 ? (
+          {watched ? (
             <div className="movie-grid">
               {watched.map((movie) => (
                 <MovieCard movie={movie} type="watchlist" />

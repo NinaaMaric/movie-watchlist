@@ -37,17 +37,14 @@ export const GlobalProvider = (props) => {
   }
 
   // move to watchlist
-  const moveToWatchList = movie =>{
+  const moveToWatchList = (movie) =>{
     dispatch({type: "MOVE_TO_WATCHLIST", payload: movie})
   }
   
-  
   //remove from watched
-  const removeFromWatched = id =>{
+  const removeFromWatched = (id) =>{
     dispatch({type: "REMOVE_FROM_WATCHED", payload: id})
   }
-  
-
 
   return (
     <GlobalContext.Provider

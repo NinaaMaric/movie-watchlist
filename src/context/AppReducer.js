@@ -25,15 +25,15 @@ export default (state, action) => {
     case "MOVE_TO_WATCHLIST":
       return {
         ...state,
-        watchlist: state.watched.filter(
+        watched: state.watched.filter(
           (movie) => movie.id !== action.payload.id
         ),
-        watched: [action.payload, ...state.watchlist],
+        watchlist: [action.payload, ...state.watchlist],
       };
     case "REMOVE_FROM_WATCHED":
       return {
         ...state,
-        watchlist: state.watched.filter((movie) => movie.id !== action.payload),
+        watched: state.watched.filter((movie) => movie.id !== action.payload),
       };
     default:
       return state;
